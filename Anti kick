@@ -1,0 +1,11 @@
+inform(“Roblox Anti Kick Script has successfully executed, Made by  CaptiveKreek#5998 on Discord.”,2)
+local mt = getrawmetatable(game)
+local oldmt = mt.index
+make_writeable(mt)
+ 
+mt.index = function(t,i)
+   if i == "Kick" then
+       return nil
+   end
+   return oldmt(t,i)
+end
